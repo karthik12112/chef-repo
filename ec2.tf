@@ -6,11 +6,4 @@ resource "aws_instance" "terraform-vault" {
   subnet_id              = "${aws_subnet.public.id}"
   vpc_security_group_ids = "${aws_security_group.sgroup.id}"
   user_data              = "${var.user_data}"
-  } 
-  # EC2 instance must be in a public subnet
-  subnet_id = "${aws_subnet.public.id}"
-
-  tags {
-    Name    = "terraform-vault"
-    Env     = "dev"
   }
